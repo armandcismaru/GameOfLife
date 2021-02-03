@@ -4,6 +4,14 @@
 Armand Cismaru   
 Valentin Oltyan
 
+## Compiling instructions
+For the parallel version comple and test the live visualisation and control rules by running `go run .`
+- If `s` is pressed, a PGM file with the current state of the board is generated.
+- If `q` is pressed, a PGM file with the current state of the board is generated and then the program terminates.
+- If `p` is pressed, the processing is paused and the current turn that is being processed is printed. If `p` is pressed again the processing is returned and `"Continuing"` is printed.
+
+Test the visualisation and control rules by running `go run .`
+
 ## 1. Parallel implementation
 ### 1.1. Functionality & Design
 The functionality of the implementation is split between `distributor.go`, `io.go`, `gol.go` and `event.go`. The core of the functional design is build around the concept of parallelization.
