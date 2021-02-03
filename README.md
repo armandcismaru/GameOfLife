@@ -42,6 +42,7 @@ The challenge to design a GameOfLife distributed implementation was tackled usin
 
 ### 2.1. Functionality & Design
 **RPC Paradigm**  On macro level, the functionality is designed keeping in mind the Remote Procedure Call general paradigm. The remote procedure names as well as the structs and types are defined in `works.go`. Every component is initialized through `main.go`, using flags to define the type of component, addresses and instructions such as live visualisation request or resuming board progress in case of the controller reconnecting. Once every component starts, they publish their methods in the DefaultServer. When workers are added, they send register requests to `engine.go` with their IP address and port thus connecting them to the server. With the engine and workers set up and listening for requests, the controller is required to establish connection to the remote server in order to start the simulation.
+![Tux, the Linux mascot](/assets/images/tux.png)
 
 **Flow & Task approach**  The flow steps below are conceptually illustrated in the diagram above, with regards to the logic flow of the running instances.
 1. The starting point of the simulation is the controller which, similarly to the parallel implementation, takes the input image from IO and sends back events to SDL.  
